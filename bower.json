@@ -1,0 +1,27 @@
+{
+  "name": "asq-spinner",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ASQ-USI-Elements/asq-spinner",
+  "authors": [
+    "Vasileios Triglianos <triglian@gmail.com>"
+  ],
+  "description": "ASQ spinner element.",
+  "keywords": [
+    "ASQ"
+  ],
+  "license": "MIT",
+  "main": "asq-spinner.html",
+  "dependencies": {
+    "polymer": "polymer/polymer#^1.4.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.1",
+    "iron-iconset-svg": "PolymerElements/iron-iconset-svg#^1.0.9",
+    "iron-icon": "PolymerElements/iron-icon#^1.0.8"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.1.4",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.3",
+    "paper-styles": "PolymerElements/paper-styles#^1.0.12",
+    "web-component-tester": "Polymer/web-component-tester#^4.2.0",
+    "webcomponents-lite": "webcomponents/webcomponents-lite#^0.6.0"
+  }
+}

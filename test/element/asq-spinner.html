@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="asq" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>asq-spinner</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <script src="../../test-fixture/test-fixture-mocha.js"></script>
+
+  <link href="../../test-fixture/test-fixture.html" rel="import">
+  <link rel="import" href="../../asq-spinner.html">
+</head>
+<body>
+
+  <test-fixture id="ActiveASQSpinner">
+    <template>
+      <asq-spinner active></asq-spinner>
+    </template>
+  </test-fixture>
+
+  <script>
+    'use strict';
+
+    suite('<asq-spinner>', function() {
+      var activeSpinner;
+      setup(function() {
+        activeSpinner = fixture('ActiveASQSpinner');
+      });
+
+      test('layout is alright', function() {
+        var ALT_TEXT = 'Loading the next gif...';
+        spinner.alt = ALT_TEXT;
+        expect(spinner.getAttribute('aria-label')).to.be.eql(ALT_TEXT);
+      });
+      
+    });
+  </script>
+
+</body>
+</html>

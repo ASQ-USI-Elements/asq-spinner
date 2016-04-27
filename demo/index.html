@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="asq-elements" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>asq-spinner | Demo</title>
+
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+
+  <link href="../asq-spinner.html" rel="import">
+
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../../paper-styles/paper-styles.html">
+  <link rel="import" href="../../paper-styles/color.html">
+  <link rel="import" href="../../paper-styles/demo-pages.html">
+
+  <style is="custom-style" include="demo-pages-shared-styles">
+    body{
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .vertical-section-container {
+      max-width: 500px;
+    }
+    paper-button {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="vertical-section-container centered">
+    <h3>Default</h3>
+    <demo-snippet class="centered-demo">
+      <template>
+        <asq-spinner></asq-spinner>
+        <asq-spinner active></asq-spinner>
+      </template>
+    </demo-snippet>
+
+    <h3>Bigger</h3>
+    <demo-snippet class="centered-demo">
+      <template>
+        <asq-spinner active class="big"></asq-spinner>
+        <style is="custom-style">
+         asq-spinner.big {
+           --asq-spinner-letter-height: 100px;
+           --asq-spinner-letter-width: 100px;
+         }
+        </style>
+      </template>
+    </demo-snippet>
+
+    <h3>Color</h3>
+    <demo-snippet class="centered-demo">
+      <template>
+        <asq-spinner active class="color red"></asq-spinner>
+        <asq-spinner active class="color indigo"></asq-spinner>
+        <asq-spinner active class="color light-green"></asq-spinner>
+        <asq-spinner active class="color amber"></asq-spinner>
+        <style is="custom-style">
+        asq-spinner.color {
+          --asq-spinner-letter-height: 32px;
+          --asq-spinner-letter-width: 32px;
+          margin: 0 5px;
+        }
+         asq-spinner.red {
+           --iron-icon-fill-color: var(--paper-red-500);
+         }
+         asq-spinner.indigo {
+           --iron-icon-fill-color: var(--paper-indigo-500);
+         }
+         asq-spinner.light-green {
+           --iron-icon-fill-color: var(--paper-light-green-500);
+         }
+         asq-spinner.amber {
+           --iron-icon-fill-color: var(--paper-amber-500);
+         }
+        </style>
+      </template>
+    </demo-snippet>
+  </div>
+</body>
+</html>
