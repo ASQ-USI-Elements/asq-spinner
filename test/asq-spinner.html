@@ -5,12 +5,13 @@
   <meta name="asq" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>asq-spinner</title>
 
-  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../../web-component-tester/browser.js"></script>
   <script src="../../test-fixture/test-fixture-mocha.js"></script>
-
+  
+  <link href="../../polymer/polymer.html" rel="import">
   <link href="../../test-fixture/test-fixture.html" rel="import">
-  <link rel="import" href="../../asq-spinner.html">
+  <link rel="import" href="../asq-spinner.html">
 </head>
 <body>
 
@@ -29,12 +30,16 @@
         activeSpinner = fixture('ActiveASQSpinner');
       });
 
-      test('layout is alright', function() {
-        var ALT_TEXT = 'Loading the next gif...';
-        spinner.alt = ALT_TEXT;
-        expect(spinner.getAttribute('aria-label')).to.be.eql(ALT_TEXT);
+      test('layout is alright', function(done) {
+        flush(function() {
+          var letters = Polymer.dom(activeSpinner.root).querySelectorAll('.letter-container');
+          assert.equal(letters.length, 3);
+          assert.equal(letters[0].id, "a");
+          assert.equal(letters[1].id, "s");
+          assert.equal(letters[2].id, "q");
+          done();
+        });
       });
-      
     });
   </script>
 

@@ -17,16 +17,11 @@ Examples:
 @homepage http://github.com/ASQ-USI-Elements/asq-spinner
 -->
 <dom-module id="asq-spinner">
-
+  <template>
   <style is="custom-style" include="iron-flex iron-flex-alignment">
 
 :host {
   display: block;
-  opacity: 0;
-}
-
-:host[active] {
-  opacity: 1;
 }
 
 #asq-logo{
@@ -42,6 +37,7 @@ Examples:
   width: var(--asq-spinner-letter-width, 24px);
   height: var(--asq-spinner-letter-height, 24px);
   margin: 0 2.5%;
+  opacity: 1;
 }
 
 .letter{
@@ -61,9 +57,10 @@ Examples:
   transform: rotateY( 180deg ) rotateX(0deg);
 }
 
-:host[active] .letter-container {
+.active .letter-container {
   -webkit-animation: frontsideAnimation 6s ease infinite;
   animation: frontsideAnimation 6s ease infinite;
+  opacity: 1;
 }
 
 @-webkit-keyframes frontsideAnimation {
@@ -77,11 +74,9 @@ Examples:
 50% { transform: rotateY(180deg); }
 100% { transform: rotateY(360deg); }
 }
-
   </style>
 
-  <template>
-    <div id="asq-logo">
+    <div id="asq-logo" class$="[[__computeContainerClasses(active)]]">
       <div id="a" class="letter-container">
         <iron-icon icon="asq:a" class="letter"></iron-icon>
         <iron-icon icon="asq:a" class="letter backfacing"></iron-icon>
@@ -99,7 +94,17 @@ Examples:
 
   <script>
     Polymer({
-      is: 'asq-spinner'
+      is: 'asq-spinner',
+      properties:{
+          active: {
+          type: Boolean,
+          value: false,
+          notify: true
+        },
+      },
+      __computeContainerClasses: function(active){
+        return active ? 'active' : ''
+      }
     });
   </script>
 
